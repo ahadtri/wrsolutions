@@ -1,0 +1,195 @@
+<div class="con">
+  <div class="leftside">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/dash">Dashboard</a>
+      </li>
+      <li class="nav-item" class="nav-link">
+        Stores
+      </li>
+      <li class="nav-item" class="nav-link">
+        Products
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="#"
+          routerLink="/invoice"
+          style="background: rgba(67, 67, 211, 0.87);"
+          >Invoices</a
+        >
+      </li>
+      <li class="nav-item" class="nav-link">
+        Quatation
+      </li>
+      <li class="nav-item" class="nav-link">
+        Purchase Order
+      </li>
+      <li class="nav-item" class="nav-link">
+        Bills
+      </li>
+      <li class="nav-item" class="nav-link">
+        Payments
+      </li>
+      <li class="nav-item" class="nav-link">
+        Reports
+      </li>
+    </ul>
+
+    <p class="copyright">copyright</p>
+  </div>
+  <div class="right">
+    <br />
+    <br />
+    <h3 style="padding-left: 15px; color: blue;">Add New Invoices</h3>
+    <br />
+    <table class="table-responsive t1" style="width: 100%;">
+      <tr>
+        <td>
+          <form class="form-inline">
+            <div class="form-group mb-2">
+              <p>Customer Name</p>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Customer Name"
+              />
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <p>Customer Details</p>
+              <textarea
+                name=""
+                id=""
+                cols="15"
+                rows="3"
+                placeholder="Address"
+              ></textarea>
+            </div>
+          </form>
+        </td>
+
+        <td class="t11">
+          <form class="form-inline" style="padding-left: 3px;">
+            <div class="form-group mb-2">
+              <p>Invoice Number</p>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <p>Invoice Date</p>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="25 march 2020"
+              />
+            </div>
+          </form>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h5 style="padding-left: 15px; color: blue;">Invoice</h5>
+    <br />
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr style="background: grey;">
+          <td>No</td>
+          <td>Code</td>
+          <td>Item Name</td>
+          <td>Unit</td>
+          <td>Price</td>
+          <td>Tax</td>
+          <td>Total</td>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>1</td>
+        <td>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of ['prd01', 'prd02', 'prd03']"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option> </mat-autocomplete
+          ><input
+            type="text"
+            placeholder="Code"
+            matInput
+            [matAutocomplete]="auto"
+            class="productcode"
+          />
+        </td>
+
+        <td>{{ name }}</td>
+        <td>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              1
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">1</button>
+              <button class="dropdown-item" type="button">2</button>
+              <button class="dropdown-item" type="button">3</button>
+            </div>
+          </div>
+        </td>
+        <td>{{ price }}</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <button
+        type="submit"
+        class="button"
+        (click)="abc1()"
+        class="btn btn-primary btn-sm"
+        style="width: 180px;"
+      >
+        Add
+      </button>
+    </div>
+    <br /><br /><br />
+    <div class="totaldiv">
+      <div></div>
+      <pre class="total">Total Rupees </pre>
+    </div>
+
+    <br /><br />
+    <hr />
+    <br />
+    <div class="buttons">
+      <button
+        type="button"
+        class="btn btn-primary btn-success lastb"
+        style="width: 150px;"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary lastb"
+        style="width: 150px; background: grey;"
+      >
+        Save as Draft
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary lastb"
+        style="width: 150px; background: grey;"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
